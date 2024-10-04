@@ -2,6 +2,7 @@
 // Environment files and .env files are available here. Set the value of any config option to process.env.<ENV name>
 
 import { Config } from "./launcher_types.js";
+import * as url from 'url';
 import * as path from 'path';
 
 export const config: Config = {
@@ -52,8 +53,8 @@ export const config: Config = {
     },
     tls: {
       enabled: true,
-      key: path.join(__dirname, "../private.key"),
-      cert: path.join(__dirname, "../certificate.crt"),
+      key: path.join(url.fileURLToPath(new URL('.', import.meta.url)), "../private.key"),
+      cert: path.join(url.fileURLToPath(new URL('.', import.meta.url)), "../certificate.crt"),
     },
   },
 };
