@@ -287,7 +287,7 @@ export async function switchServer(cmd: string, sender: Player) {
         if (sender.state! != Enums.ClientState.DISCONNECTED) {
           sender.disconnect(
             Enums.ChatColor.RED +
-              `Something went wrong whilst switching servers: ${err.message}${
+              `6 Something went wrong whilst switching servers: ${err.message}${
                 err.code == "ENOTFOUND"
                   ? addr.includes(":")
                     ? `\n${Enums.ChatColor.GRAY}Suggestion: Replace the : in your IP with a space.`
@@ -324,7 +324,7 @@ export async function switchServer(cmd: string, sender: Player) {
       if (sender.state! != Enums.ClientState.DISCONNECTED) {
         sender.disconnect(
           Enums.ChatColor.RED +
-            `Something went wrong whilst switching servers: ${err.message}${
+            `7 Something went wrong whilst switching servers: ${err.message}${
               err.code == "ENOTFOUND"
                 ? addr.includes(":")
                   ? `\n${Enums.ChatColor.GRAY}Suggestion: Replace the : in your IP with a space.`
