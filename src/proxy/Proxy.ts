@@ -115,6 +115,7 @@ export class Proxy extends EventEmitter {
       // playercount will be dynamically updated
     }
     if (this.config.tls && this.config.tls.enabled) {
+      this._logger.info(`Starting HTTPS instance...`);
       this.httpServer = https
         .createServer(
           {
@@ -128,6 +129,7 @@ export class Proxy extends EventEmitter {
         noServer: true,
       });
     } else {
+      this._logger.info(`Starting HTTP instance...`);
       this.httpServer = http.createServer((req, res) => this._handleNonWSRequest(req, res, this.config)).listen(this.config.bindPort || 8080, this.config.bindHost || "127.0.0.1");
       this.wsServer = new WebSocketServer({
         noServer: true,
