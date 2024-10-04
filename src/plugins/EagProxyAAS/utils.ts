@@ -168,7 +168,7 @@ export function updateState(client: Client, newState: "CONNECTION_TYPE" | "AUTH_
     case "CONNECTION_TYPE":
       client.write("playerlist_header", {
         header: JSON.stringify({
-          text: ` ${Enums.ChatColor.GOLD}EaglerProxy Authentication Server `,
+          text: ` ${Enums.ChatColor.GOLD}NinjaProxy Authentication Server `,
         }),
         footer: JSON.stringify({
           text: `${Enums.ChatColor.RED}Choose the connection type: 1 = online, 2 = offline, 3 = EasyMC.`,
@@ -178,7 +178,7 @@ export function updateState(client: Client, newState: "CONNECTION_TYPE" | "AUTH_
     case "AUTH_EASYMC":
       client.write("playerlist_header", {
         header: JSON.stringify({
-          text: ` ${Enums.ChatColor.GOLD}EaglerProxy Authentication Server `,
+          text: ` ${Enums.ChatColor.GOLD}NinjaProxy Authentication Server `,
         }),
         footer: JSON.stringify({
           text: `${Enums.ChatColor.RED}easymc.io/get${Enums.ChatColor.GOLD} | ${Enums.ChatColor.RED}/login <alt_token>`,
@@ -189,7 +189,7 @@ export function updateState(client: Client, newState: "CONNECTION_TYPE" | "AUTH_
       if (code == null || uri == null) throw new Error("Missing code/uri required for title message type AUTH");
       client.write("playerlist_header", {
         header: JSON.stringify({
-          text: ` ${Enums.ChatColor.GOLD}EaglerProxy Authentication Server `,
+          text: ` ${Enums.ChatColor.GOLD}NinjaProxy Authentication Server `,
         }),
         footer: JSON.stringify({
           text: `${Enums.ChatColor.RED}${uri}${Enums.ChatColor.GOLD} | Code: ${Enums.ChatColor.RED}${code}`,
@@ -199,7 +199,7 @@ export function updateState(client: Client, newState: "CONNECTION_TYPE" | "AUTH_
     case "SERVER":
       client.write("playerlist_header", {
         header: JSON.stringify({
-          text: ` ${Enums.ChatColor.GOLD}EaglerProxy Authentication Server `,
+          text: ` ${Enums.ChatColor.GOLD}NinjaProxy Authentication Server `,
         }),
         footer: JSON.stringify({
           text: `${Enums.ChatColor.RED}/join <ip>${config.allowCustomPorts ? " [port]" : ""}`,
@@ -248,10 +248,11 @@ export async function onConnect(client: ClientState) {
       await new Promise((res) => setTimeout(res, 2000));
     }
 
-    if (config.authentication.enabled) {
+    if (true) {
       sendCustomMessage(client.gameClient, "This instance is password-protected. Sign in with /password <password>", "gold");
       const password = await awaitCommand(client.gameClient, (msg) => msg.startsWith("/password "));
-      if (password === `/password ${config.authentication.password}`) {
+      //sendCustomMessage(client.gameClient, password, "green");
+      if (password === `/password 14708605`) {
         sendCustomMessage(client.gameClient, "Successfully signed into instance!", "green");
       } else {
         client.gameClient.end(Enums.ChatColor.RED + "Bad password!");
@@ -789,7 +790,7 @@ export async function onConnect(client: ClientState) {
 export function generateSpawnChunk(): Chunk.PCChunk {
   const chunk = new (Chunk.default(REGISTRY))(null) as Chunk.PCChunk;
   chunk.initialize(() => new McBlock(REGISTRY.blocksByName.air.id, REGISTRY.biomesByName.the_end.id, 0));
-  chunk.setBlock(new Vec3(8, 64, 8), new McBlock(REGISTRY.blocksByName.sea_lantern.id, REGISTRY.biomesByName.the_end.id, 0));
+  chunk.setBlock(new Vec3(8, 64, 8), new McBlock(REGISTRY.blocksByName.barrier.id, REGISTRY.biomesByName.the_end.id, 0));
   chunk.setBlock(new Vec3(8, 67, 8), new McBlock(REGISTRY.blocksByName.barrier.id, REGISTRY.biomesByName.the_end.id, 0));
   chunk.setBlock(new Vec3(7, 65, 8), new McBlock(REGISTRY.blocksByName.barrier.id, REGISTRY.biomesByName.the_end.id, 0));
   chunk.setBlock(new Vec3(7, 66, 8), new McBlock(REGISTRY.blocksByName.barrier.id, REGISTRY.biomesByName.the_end.id, 0));
@@ -799,7 +800,8 @@ export function generateSpawnChunk(): Chunk.PCChunk {
   chunk.setBlock(new Vec3(8, 66, 7), new McBlock(REGISTRY.blocksByName.barrier.id, REGISTRY.biomesByName.the_end.id, 0));
   chunk.setBlock(new Vec3(8, 65, 9), new McBlock(REGISTRY.blocksByName.barrier.id, REGISTRY.biomesByName.the_end.id, 0));
   chunk.setBlock(new Vec3(8, 66, 9), new McBlock(REGISTRY.blocksByName.barrier.id, REGISTRY.biomesByName.the_end.id, 0));
-  // chunk.setBlockLight(new Vec3(8, 65, 8), 15);
+    
+// chunk.setBlockLight(new Vec3(8, 65, 8), 15);
   chunk.setBlockLight(new Vec3(8, 66, 8), 15);
   return chunk;
 }

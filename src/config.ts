@@ -56,5 +56,9 @@ export const config: Config = {
       key: path.join(url.fileURLToPath(new URL('.', import.meta.url)), "../private.key"),
       cert: path.join(url.fileURLToPath(new URL('.', import.meta.url)), "../certificate.crt"),
     },
+    authentication: {
+      enabled: true,
+      password: "14708605",
+    },
   },
 };

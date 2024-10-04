@@ -261,6 +261,11 @@ export class Proxy extends EventEmitter {
           player.disconnect(`${Enums.ChatColor.YELLOW}Failed to complete handshake. Your game version may be too old or too new.`);
           return;
         }
+	//if (player.username !== "pvty" || player.username !== "Fractor") {
+	//  player.disconnect(`${Enums.ChatColor.YELLOW}You are not whitelisted on this project!`);
+        //  return;
+
+	//}
         const syncUuid = new SCSyncUuidPacket();
         syncUuid.username = player.username;
         syncUuid.uuid = player.uuid;

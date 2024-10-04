@@ -60,4 +60,8 @@ export type AdapterOptions = {
     key: string;
     cert: string;
   };
+  authentication?: {
+    enabled: boolean;
+    password: string;
+  };
 };

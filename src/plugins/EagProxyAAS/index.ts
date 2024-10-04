@@ -219,7 +219,7 @@ CONFIG.adapter.server = {
   port: config.bindInternalServerPort,
 };
 CONFIG.adapter.motd = {
-  l1: Enums.ChatColor.GOLD + "EaglerProxy as a Service",
+  l1: Enums.ChatColor.GOLD + "NINJAPROXY " + Enums.ChatColor.RED + "v1.0.2",
 };
 
 if (config.allowDirectConnectEndpoints) {
