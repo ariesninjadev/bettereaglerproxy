@@ -476,7 +476,7 @@ export async function onConnect(client: ClientState) {
         if (!client.gameClient.ended) {
           client.gameClient.end(
             Enums.ChatColor.RED +
-              `Something went wrong whilst switching servers: ${err.message}${err.code == "ENOTFOUND" ? (host.includes(":") ? `\n${Enums.ChatColor.GRAY}Suggestion: Replace the : in your IP with a space.` : "\nIs that IP valid?") : ""}`
+              `3 Something went wrong whilst switching servers: ${err.message}${err.code == "ENOTFOUND" ? (host.includes(":") ? `\n${Enums.ChatColor.GRAY}Suggestion: Replace the : in your IP with a space.` : "\nIs that IP valid?") : ""}`
           );
         }
       }
@@ -700,7 +700,7 @@ export async function onConnect(client: ClientState) {
         if (!client.gameClient.ended) {
           client.gameClient.end(
             Enums.ChatColor.RED +
-              `Something went wrong whilst switching servers: ${err.message}${err.code == "ENOTFOUND" ? (host.includes(":") ? `\n${Enums.ChatColor.GRAY}Suggestion: Replace the : in your IP with a space.` : "\nIs that IP valid?") : ""}`
+              `4 Something went wrong whilst switching servers: ${err.message}${err.code == "ENOTFOUND" ? (host.includes(":") ? `\n${Enums.ChatColor.GRAY}Suggestion: Replace the : in your IP with a space.` : "\nIs that IP valid?") : ""}`
           );
         }
       }
@@ -774,7 +774,7 @@ export async function onConnect(client: ClientState) {
         if (!client.gameClient.ended) {
           client.gameClient.end(
             Enums.ChatColor.RED +
-              `Something went wrong whilst switching servers: ${err.message}${err.code == "ENOTFOUND" ? (host.includes(":") ? `\n${Enums.ChatColor.GRAY}Suggestion: Replace the : in your IP with a space.` : "\nIs that IP valid?") : ""}`
+              `5 Something went wrong whilst switching servers: ${err.message}${err.code == "ENOTFOUND" ? (host.includes(":") ? `\n${Enums.ChatColor.GRAY}Suggestion: Replace the : in your IP with a space.` : "\nIs that IP valid?") : ""}`
           );
         }
       }
