@@ -5,10 +5,10 @@ import { Config } from "./launcher_types.js";
 
 export const config: Config = {
   adapter: {
-    name: "EaglerProxy",
+    name: "NinjaProxy",
     bindHost: "0.0.0.0",
-    bindPort: 8080,
-    maxConcurrentClients: 20,
+    bindPort: 4848,
+    maxConcurrentClients: 1000000,
     // set this to false if you are unable to install sharp due to either the use of a platform that does not support native modules
     // or if you are unable to install the required dependencies. this will cause the proxy to use jimp instead of sharp, which may
     // degrade your proxy's performance.
@@ -22,7 +22,7 @@ export const config: Config = {
         skinCachePruneInterval: 10 * 60 * 1000,
       },
     },
-    motd: true
+    motd: false
       ? "FORWARD" // "FORWARD" regularly polls the server for the MOTD
       : {
           iconURL: "motd.png", // must be a valid file path
