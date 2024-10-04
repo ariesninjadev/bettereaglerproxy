@@ -31,7 +31,7 @@ logger.info("Starting internal server...");
 let server = createServer({
     host: config.bindInternalServerIp,
     port: config.bindInternalServerPort,
-    motdMsg: `${Enums.ChatColor.GOLD}EaglerProxy as a Service`,
+    motdMsg: `${Enums.ChatColor.GOLD}NINJAPROXY ${Enums.ChatColor.RED}v1.0.2`,
     "online-mode": false,
     version: "1.8.9",
   }),
