@@ -57,7 +57,7 @@ export type AdapterOptions = {
   };
   tls?: {
     enabled: boolean;
-    key: null;
-    cert: null;
+    key: string;
+    cert: string;
   };
 };
